@@ -2,16 +2,16 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 export const Getmethod = () => {
-  const [gets, setGets] = useState(null);
+  const [gets, setGets] = useState();
 
   useEffect(() => {
-    const fetchData = async() => {
+    const fetchData = async () => {
       try {
-        const response = await axios.get("https://jsonplaceholder.typicode.com/todos");
+        const response = await axios.get(
+          "https://jsonplaceholder.typicode.com/todos"
+        );
         setGets(response.data);
-
-      } 
-      catch (error) {
+      } catch (error) {
         console.log(error);
       }
     };
@@ -21,10 +21,13 @@ export const Getmethod = () => {
   return (
     <div>
       <h2>Get details</h2>
-      {gets && 
-        (<ul>
-           {gets.map(item => <li key={item.id} > {item.title} </li>)}
-        </ul>)}
+      {gets && (
+        <ul>
+          {gets.map((item) => (
+            <li key={item.id}> {item.title} </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

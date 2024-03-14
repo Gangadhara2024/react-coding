@@ -5,7 +5,7 @@ export const Postmethod = () => {
   const [form, setForm] = useState({
     userId: 1,
     title: "",
-    completed: false,
+    completed: false
   });
 
   const URL = "https://jsonplaceholder.typicode.com/todos";
@@ -25,7 +25,7 @@ export const Postmethod = () => {
   return (
       <>
       <form onSubmit={handleform}>
-        <input type="text" onChange={event => setForm({...form, title: event.target.value})}/>
+        <input type="text" onChange={event => setForm({ ...form, title: event.target.value})}/>  
         <button type="submit">Submit</button>
       </form>
       </>
