@@ -1,19 +1,19 @@
-import { useState } from "react";
-import { createContext } from "react";
+import React, { createContext } from 'react'
+import { useState } from 'react';
 
-export const CounterContext = createContext();
+export const countContext = createContext();
 
-export const Context = (props)=>{
-   
-    const [count, setCount] = useState(4);
+export const Context = (props) => {
 
-    return(
-        <>
-          <CounterContext.Provider value={{count, setCount, name: 'gangadhar'}}>
-             {props.children}
-          </CounterContext.Provider>
-        
-        </>
-    );
+    const [count, setCount] = useState(1);
+     
+  return (
+    <div>
+         <countContext.Provider value={{count, name: 'hello', setCount}}>
+          {props.children}
+         </countContext.Provider>
+    </div>
+  )
 }
-  
+
+

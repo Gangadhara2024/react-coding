@@ -1,27 +1,26 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext,} from "react";
 import "./App.css";
 import { Getmethod } from "./Getmethod";
 import { Hookeffect } from "./Hookeffect";
 import { Postmethod } from "./Postmethod";
-import { Button } from "./Button";
-import {CounterContext} from './Context' 
+import {Button} from './Button'
+import { countContext } from "./Context";
 
 function App() {
 
-      const countstate = useContext(CounterContext);
-
-      console.log(countstate);
-
+  // const stateCount = useContext(countContext);
+  // console.log(stateCount);
+  
   return (
     <>
-       <h2>count is {countstate.count}</h2>
-       <Button/>
-       <Button/>
-       <Button/>
-       <Button/>
+       {/* <h2>count is {stateCount.count} </h2>
+        <Button/>
+        <Button/>
+        <Button/>
+        <Button/> */}
 
       {/* <Getmethod/> */}
-      {/* <Postmethod/> */}
+      <Postmethod/>
       {/* <Hookeffect/> */}
     </>
   );
